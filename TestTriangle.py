@@ -34,7 +34,7 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(1,1,1),'Equilateral','1,1,1 should be equilateral')
 
     def testEquilateralTriangleB(self):    
-        self.assertEqual(classifyTriangle(12,12,12),'Equilateral','12,12,12 should be equilateral')
+        self.assertEqual(classifyTriangle(200,200,200),'Equilateral','200,200,200 should be equilateral')
 
     def testNotATriangleTriangleA(self):
         self.assertEqual(classifyTriangle(10,10,20),'NotATriangle','10,10,20 should be NotATriangle')
@@ -48,30 +48,28 @@ class TestTriangles(unittest.TestCase):
     def testIsoscelesTriangleA(self):    
         self.assertEqual(classifyTriangle(10, 10, 18),'Isoceles', '10, 10, 18 should be Isoceles')
 
-    def testIsoscelesTriangleB(self):
-        self.assertEqual(classifyTriangle(5.5,5.5,10),'Isoceles', '5.5, 5.5, 10 should be Isoceles')
-
     def testIsoscelesTriangleC(self):
         self.assertEqual(classifyTriangle(18,10,10),'Isoceles', '18, 10, 10 should be Isoceles')
 
-    def testIsoscelesTriangleD(self):
-        self.assertEqual(classifyTriangle(10,5.5,5.5),'Isoceles', '10, 5.5, 5.5should be Isoceles')
-
     def testScaleneTriangleA(self):     
         self.assertEqual(classifyTriangle(2,5,6),'Scalene','2,5,6 should be Scalene')
-
-    def testScaleneTriangleB(self):     
-        self.assertEqual(classifyTriangle(2.5,5.5,6.5),'Scalene','2.5,5.5,6.5 should be Scalene')
     
-    def testScaleneTriangleC(self):     
+    def testScaleneTriangleB(self):     
         self.assertEqual(classifyTriangle(6,5,2),'Scalene','6,5,2 should be Scalene')
-
-    def testScaleneTriangleD(self):     
-        self.assertEqual(classifyTriangle(6.5,5.5,2.5),'Scalene','6.5,5.5,2.5 should be Scalene')
 
     def testInvalidInputA(self):    
         self.assertEqual(classifyTriangle(-1,-1,-1),'InvalidInput','-1,-1,-1 should be InvalidInput')
+
+    def testInvalidInputB(self):    
+        self.assertEqual(classifyTriangle(201,201,201),'InvalidInput','201,201,201 should be InvalidInput')
     
+    def testInvalidInputC(self):     
+        self.assertEqual(classifyTriangle(6.5,5.5,2.5),'InvalidInput','6.5,5.5,2.5 should be InvalidInput')
+
+    def testInvalidInputD(self):     
+        self.assertEqual(classifyTriangle(1, 0, 5),'InvalidInput','1, 0, 5 should be InvalidInput')
+    # def testInvalidInputC(self):    
+    #     self.assertEqual(classifyTriangle("A","A","A"),'InvalidInput','A,A,A should be InvalidInput')
    
 if __name__ == '__main__':
     print('Running unit tests')
